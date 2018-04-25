@@ -1,34 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
-
-namespace Falla2018
+﻿namespace Falla2018
 {
-	public partial class App : Application
-	{
-		public App ()
-		{
-			InitializeComponent();
+    using Falla2018.Views;
+    using Xamarin.Forms;
 
-			MainPage = new Falla2018.MainPage();
-		}
+    public partial class App : Application
+    {
+        #region Constructores
+        public App()
+        {
+            InitializeComponent();
 
-		protected override void OnStart ()
-		{
-			// Handle when your app starts
-		}
+            MainPage = new NavigationPage(new LoginPage());
+        }
+        #endregion
 
-		protected override void OnSleep ()
-		{
-			// Handle when your app sleeps
-		}
+        #region Metodos
+        protected override void OnStart()
+        {
+            // Handle when your app starts
+        }
 
-		protected override void OnResume ()
-		{
-			// Handle when your app resumes
-		}
-	}
+        protected override void OnSleep()
+        {
+            // Handle when your app sleeps
+        }
+
+        protected override void OnResume()
+        {
+            // Handle when your app resumes
+        }
+        #endregion
+    }
 }

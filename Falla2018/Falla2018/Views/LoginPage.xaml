@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Falla2018.Views.LoginPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}"
+    Title="Login">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+            Padding="10,20,10,10">
+                <Label
+                FontAttributes="Bold"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                Text="Falla 2018">
+                </Label>
+                <Image
+                HeightRequest="100"
+                Source="falla">
+                </Image>
+                <Grid
+                Margin="0,20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    FontAttributes="Bold"
+                    Text="E-mail">
+                    </Label>
+                    <Entry
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Keyboard="Email"
+                    Placeholder="Introduce tu email">
+                    </Entry>
+                    <Label
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    FontAttributes="Bold"
+                    Text="Password">
+                    </Label>
+                    <Entry
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    IsPassword="True"
+                    Placeholder="Introduce tu password">
+                    </Entry>
+                </Grid>
+                <StackLayout
+                Orientation="Horizontal">
+                    <Label
+                    HorizontalOptions="StartAndExpand"
+                    Text="Recuerdame en este dispotivo"
+                    VerticalOptions="Center">
+                    </Label>
+                    <Switch
+                    HorizontalOptions="End"
+                    IsToggled="True">
+                    </Switch>
+                </StackLayout>
+                <ActivityIndicator>
+                </ActivityIndicator>
+                <StackLayout
+                Margin="40,0">
+                    <Button
+                    BackgroundColor="Navy"
+                    BorderRadius="23"
+                    HeightRequest="46"
+                    Text="Login"
+                    TextColor="White">
+                    </Button>
+                    <Button
+                    BackgroundColor="Purple"
+                    BorderRadius="23"
+                    HeightRequest="46"
+                    Text="Registrarse"
+                    TextColor="White">
+                    </Button>
+                </StackLayout>
+                <StackLayout
+                HorizontalOptions="Center"
+                Orientation="Horizontal">
+                    <Image
+                    Source="facebook_logo"
+                    WidthRequest="80">
+                    </Image>
+                    <Image
+                    Source="twitter_logo"
+                    WidthRequest="80">
+                    </Image>
+                    <Image
+                    Source="instagram_logo"
+                    WidthRequest="80">
+                    </Image>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
