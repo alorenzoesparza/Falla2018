@@ -1,82 +1,44 @@
 ﻿namespace Falla2018.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
-    using System;
-    using System.ComponentModel;
     using System.Windows.Input;
+    using Views;
     using Xamarin.Forms;
 
-    public class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : BaseViewModel
     {
-        #region Eventos
-        public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
-
         #region Atributos
+        private string email;
         private string password;
         private bool isRunning;
         private bool isEnabled;
         #endregion
 
         #region Propiedades
-        public string Email { get; set; }
+        public string Email
+        {
+            get { return this.email; }
+            set { SetValue(ref this.email, value); }
+        }
+
         public string Password
         {
-            get
-            {
-                return this.password;
-            }
-                
-            set
-            {
-                if (this.password != value)
-                {
-                    this.password = value;
-                    PropertyChanged?.Invoke(
-                        this,
-                        new PropertyChangedEventArgs(nameof(this.Password)));
-                }
-            }
+            get { return this.password; }
+            set { SetValue(ref this.password, value); }
         }
 
         public bool IsRunning
         {
-            get
-            {
-                return this.isRunning;
-            }
-
-            set
-            {
-                if (this.isRunning != value)
-                {
-                    this.isRunning = value;
-                    PropertyChanged?.Invoke(
-                        this,
-                        new PropertyChangedEventArgs(nameof(this.IsRunning)));
-                }
-            }
+            get { return this.isRunning; }
+            set { SetValue(ref this.isRunning, value); }
         }
 
         public bool IsRemembered { get; set; }
 
         public bool IsEnabled
         {
-            get
-            {
-                return this.isEnabled;
-            }
-
-            set
-            {
-                if (this.isEnabled != value)
-                {
-                    this.isEnabled = value;
-                    PropertyChanged?.Invoke(
-                        this,
-                        new PropertyChangedEventArgs(nameof(this.IsEnabled)));
-                }
-            }
+            get { return this.isEnabled; }
+            set { SetValue(ref this.isEnabled, value); }
         }
 
         #endregion
@@ -87,6 +49,9 @@
             this.IsRemembered = true;
             this.IsEnabled = true;
             this.IsRunning = false;
+
+            this.Email = "antonio@ono.com";
+            this.Password = "1234";
         }
         #endregion
 
@@ -144,11 +109,11 @@
 
             this.IsRunning = false;
             this.IsEnabled = true;
+            this.Email = string.Empty;
+            this.Password = string.Empty;
 
-            await Application.Current.MainPage.DisplayAlert(
-                "Ok",
-                "Logueandose",
-                "Aceptar");
+            MainViewModel.GetInstance().Events = new EventsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new EventsPage());
         }
 
         public ICommand RegisterCommand { get; set; }
