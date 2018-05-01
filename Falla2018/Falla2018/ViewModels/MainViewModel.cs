@@ -4,13 +4,21 @@
     {
         #region ViewModels
         public LoginViewModel Login { get; set; }
-        public EventsViewModel Events { get; set; }
+        public ActsViewModel Events { get; set; }
+        #endregion
+
+        #region Propiedades
+        public string BaseUrl { get; set; }
+        public string ApiUrl { get; set; }
         #endregion
 
         #region Constructores
         public MainViewModel()
         {
             instance = this;
+
+            BaseUrl = "http://antoniole.com/";
+            ApiUrl = "/FallaMovilApi";
             this.Login = new LoginViewModel();
         }
         #endregion

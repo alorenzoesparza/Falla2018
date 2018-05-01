@@ -112,8 +112,8 @@
             this.Email = string.Empty;
             this.Password = string.Empty;
 
-            MainViewModel.GetInstance().Events = new EventsViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new EventsPage());
+            MainViewModel.GetInstance().Events = new ActsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new ActsPage());
         }
 
         public ICommand RegisterCommand { get; set; }

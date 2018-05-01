@@ -4,9 +4,9 @@
     using Xamarin.Forms.Xaml;
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class EventsPage : ContentPage
+	public partial class ActsPage : ContentPage
 	{
-		public EventsPage ()
+		public ActsPage ()
 		{
 			InitializeComponent ();
 		}
