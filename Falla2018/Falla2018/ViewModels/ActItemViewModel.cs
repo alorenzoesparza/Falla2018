@@ -21,6 +21,7 @@
         #region Metodos
         private async void SelectAct()
         {
+            MainViewModel.GetInstance().Act = new ActViewModel(this);
             await Application.Current.MainPage.Navigation.PushAsync(new ActView());
         }
         #endregion
