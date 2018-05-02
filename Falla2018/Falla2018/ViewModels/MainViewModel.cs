@@ -4,7 +4,8 @@
     {
         #region ViewModels
         public LoginViewModel Login { get; set; }
-        public ActsViewModel Events { get; set; }
+        public ActsViewModel Acts { get; set; }
+        public ActViewModel Act { get; set; }
         #endregion
 
         #region Propiedades

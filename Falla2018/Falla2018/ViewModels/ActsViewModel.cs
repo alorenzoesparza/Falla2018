@@ -17,14 +17,14 @@
         #endregion
 
         #region Atributos
-        private ObservableCollection<Act> acts;
+        private ObservableCollection<ActItemViewModel> acts;
         private bool isRefreshing;
         private string filter;
         private List<Act> actsList;
         #endregion
 
         #region Propiedades
-        public ObservableCollection<Act> Acts
+        public ObservableCollection<ActItemViewModel> Acts
         {
             get { return this.acts; }
             set { SetValue(ref this.acts, value); }
@@ -90,11 +90,32 @@
                 }
 
                 this.actsList = (List<Act>)response.Result;
-                this.Acts = new ObservableCollection<Act>(
-                    this.actsList.OrderByDescending(a => a.FechaActo));
+                this.Acts = new ObservableCollection<ActItemViewModel>(
+                    this.ToActItemViewModel(this.actsList));
 
                 //IsRefreshing = false;
             }
+        }
+        #endregion
+
+        #region Metodos
+        private IEnumerable<ActItemViewModel> ToActItemViewModel(List<Act> actsList)
+        {
+            return this.actsList.Select(a => new ActItemViewModel
+            {
+                ActoOficial = a.ActoOficial,
+                Descripcion = a.Descripcion,
+                FechaActo = a.FechaActo,
+                HoraActo = a.HoraActo,
+                IdAct = a.IdAct,
+                Imagen = a.Imagen,
+                Imagen500 = a.Imagen500,
+                PagInicio = a.PagInicio,
+                Precio = a.Precio,
+                PrecioInfantiles = a.PrecioInfantiles,
+                Titular = a.Titular,
+                YaEfectuado = a.YaEfectuado,
+            });
         }
         #endregion
 
@@ -110,14 +131,13 @@
         {
             if (string.IsNullOrEmpty(filter))
             {
-                this.Acts = new ObservableCollection<Act>(
-                    this.actsList.OrderByDescending(a => a.FechaActo));
-
+                this.Acts = new ObservableCollection<ActItemViewModel>(
+                    this.ToActItemViewModel(this.actsList));
             }
             else
             {
-                this.Acts = new ObservableCollection<Act>(
-                    this.actsList
+                this.Acts = new ObservableCollection<ActItemViewModel>(
+                    this.ToActItemViewModel(this.actsList)
                     .Where(a => a.Titular.ToLower().Contains(Filter.ToLower()))
                     .OrderByDescending(a => a.FechaActo));
             }

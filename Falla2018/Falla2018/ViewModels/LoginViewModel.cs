@@ -50,8 +50,8 @@
             this.IsEnabled = true;
             this.IsRunning = false;
 
-            this.Email = "antonio@ono.com";
-            this.Password = "1234";
+            this.Email = "alorenzoesparza@ono.com";
+            this.Password = "Antonio1.";
         }
         #endregion
 
@@ -94,7 +94,7 @@
             this.IsRunning = true;
             this.IsEnabled = false;
 
-            if (this.Email != "antonio@ono.com" || this.Password != "1234")
+            if (this.Email != "alorenzoesparza@ono.com" || this.Password != "Antonio1.")
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
@@ -112,7 +112,7 @@
             this.Email = string.Empty;
             this.Password = string.Empty;
 
-            MainViewModel.GetInstance().Events = new ActsViewModel();
+            MainViewModel.GetInstance().Acts = new ActsViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new ActsPage());
         }
 

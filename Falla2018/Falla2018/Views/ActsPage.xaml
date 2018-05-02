@@ -31,6 +31,9 @@
                                 CornerRadius="20"
                                 HasShadow="True"
                                 Margin="5">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding SelectActCommand}"/>
+                                </Frame.GestureRecognizers>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"></ColumnDefinition>
@@ -38,28 +41,25 @@
                                         <ColumnDefinition Width="*"></ColumnDefinition>
                                     </Grid.ColumnDefinitions>
                                     <Image 
-                                    Grid.Column="0"
-                                    HorizontalOptions="Start"
-                                    Source="{Binding ImagenFullPath}"
-                                    WidthRequest="100">
-                                        <Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding SelectActCommand}"/>
-                                        </Image.GestureRecognizers>
+                                        Grid.Column="0"
+                                        HorizontalOptions="Start"
+                                        Source="{Binding ImagenFullPath}"
+                                        WidthRequest="100">
                                     </Image>
                                     <Label
-                                    FontAttributes="Bold"
-                                    FontSize="Medium"
-                                    Grid.Column="1"
-                                    HorizontalOptions="FillAndExpand"
-                                    Text="{Binding Titular}"
-                                    VerticalOptions="Center">
+                                        FontAttributes="Bold"
+                                        FontSize="Medium"
+                                        Grid.Column="1"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="{Binding Titular}"
+                                        VerticalOptions="Center">
                                     </Label>
                                     <Label 
-                                    FontSize="Medium"
-                                    Grid.Column="2"
-                                    HorizontalOptions="FillAndExpand"
-                                    Text="{Binding FechaActo, StringFormat='{0:dd/MM/yyyy}'}"
-                                    VerticalOptions="Center">
+                                        FontSize="Medium"
+                                        Grid.Column="2"
+                                        HorizontalOptions="FillAndExpand"
+                                        Text="{Binding FechaActo, StringFormat='{0:dd/MM/yyyy}'}"
+                                        VerticalOptions="Center">
                                     </Label>
                                 </Grid>
                             </Frame>
