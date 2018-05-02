@@ -6,6 +6,9 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
+    using Xamarin.Forms;
+    using System.Windows.Input;
+    using GalaSoft.MvvmLight.Command;
 
     public class ActsViewModel : BaseViewModel
     {
@@ -15,6 +18,9 @@
 
         #region Atributos
         private ObservableCollection<Act> acts;
+        private bool isRefreshing;
+        private string filter;
+        private List<Act> actsList;
         #endregion
 
         #region Propiedades
@@ -22,6 +28,22 @@
         {
             get { return this.acts; }
             set { SetValue(ref this.acts, value); }
+        }
+
+        public bool IsRefreshing
+        {
+            get { return this.isRefreshing; }
+            set
+            {
+                SetValue(ref this.isRefreshing, value);
+                this.Search();
+            }
+        }
+
+        public string Filter
+        {
+            get { return this.filter; }
+            set { SetValue(ref this.filter, value); }
         }
         #endregion
 
@@ -46,6 +68,8 @@
                     //await dialogService.VerMensaje(
                     //    "Error",
                     //    conexion.Message);
+
+                    await Application.Current.MainPage.Navigation.PopAsync();
                     return;
                 }
 
@@ -61,14 +85,49 @@
                     //await dialogService.VerMensaje(
                     //    "Error",
                     //    conexion.Message);
-                    //return;
+                    await Application.Current.MainPage.Navigation.PopAsync();
+                    return;
                 }
 
-                var acts = (List<Act>)response.Result;
+                this.actsList = (List<Act>)response.Result;
                 this.Acts = new ObservableCollection<Act>(
-                    acts.OrderByDescending(a => a.FechaActo));
+                    this.actsList.OrderByDescending(a => a.FechaActo));
 
                 //IsRefreshing = false;
+            }
+        }
+        #endregion
+
+        #region Comandos
+        public ICommand SearchCommand
+        { get
+            {
+                return new RelayCommand(Search);
+            }
+        }
+
+        private void Search()
+        {
+            if (string.IsNullOrEmpty(filter))
+            {
+                this.Acts = new ObservableCollection<Act>(
+                    this.actsList.OrderByDescending(a => a.FechaActo));
+
+            }
+            else
+            {
+                this.Acts = new ObservableCollection<Act>(
+                    this.actsList
+                    .Where(a => a.Titular.ToLower().Contains(Filter.ToLower()))
+                    .OrderByDescending(a => a.FechaActo));
+            }
+        }
+
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return new RelayCommand(LoadActs);
             }
         }
         #endregion

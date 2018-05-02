@@ -3,15 +3,70 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Falla2018.Views.ActsPage"
+    BackgroundColor="Silver"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
     Title="Eventos">
     <ContentPage.Content>
         <StackLayout
-            BindingContext="{Binding Events}"
+            BindingContext="{Binding Acts}"
             Padding="5">
-            <Label Text="EVENTOS!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <SearchBar
+                BackgroundColor="Silver"
+                Placeholder="Buscar..."
+                SearchCommand="{Binding SearchCommand}"
+                Text="{Binding Filter, Mode=TwoWay}">
+            </SearchBar>
+            <ListView
+                BackgroundColor="Silver"
+                HasUnevenRows="True"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+                ItemsSource="{Binding Acts}"
+                RefreshCommand="{Binding RefreshCommand}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame
+                                CornerRadius="20"
+                                HasShadow="True"
+                                Margin="5">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Image 
+                                    Grid.Column="0"
+                                    HorizontalOptions="Start"
+                                    Source="{Binding ImagenFullPath}"
+                                    WidthRequest="100">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding SelectActCommand}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                    <Label
+                                    FontAttributes="Bold"
+                                    FontSize="Medium"
+                                    Grid.Column="1"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="{Binding Titular}"
+                                    VerticalOptions="Center">
+                                    </Label>
+                                    <Label 
+                                    FontSize="Medium"
+                                    Grid.Column="2"
+                                    HorizontalOptions="FillAndExpand"
+                                    Text="{Binding FechaActo, StringFormat='{0:dd/MM/yyyy}'}"
+                                    VerticalOptions="Center">
+                                    </Label>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
