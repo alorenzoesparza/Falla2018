@@ -2,11 +2,16 @@
 {
     using GalaSoft.MvvmLight.Command;
     using System.Windows.Input;
+    using Services;
     using Views;
     using Xamarin.Forms;
 
     public class LoginViewModel : BaseViewModel
     {
+        #region Servicios
+        private ApiService apiService;
+        #endregion
+
         #region Atributos
         private string email;
         private string password;
@@ -46,6 +51,8 @@
         #region Constructor
         public LoginViewModel()
         {
+            apiService = new ApiService();
+
             this.IsRemembered = true;
             this.IsEnabled = true;
             this.IsRunning = false;
@@ -94,18 +101,24 @@
             this.IsRunning = true;
             this.IsEnabled = false;
 
-            if (this.Email != "alorenzoesparza@ono.com" || this.Password != "Antonio1.")
+            var connection = await this.apiService.CheckConnection();
+            
+            if (!connection.IsSuccess)
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
 
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
-                    "Email o password incorrectos",
+                    connection.Message,
                     "Aceptar");
-                this.Password = string.Empty;
                 return;
             }
+
+            var Token = await this.apiService.GetToken(
+                "http://api.aacvalencia.es",
+                this.Email,
+                this.Password);
 
             this.IsRunning = false;
             this.IsEnabled = true;
