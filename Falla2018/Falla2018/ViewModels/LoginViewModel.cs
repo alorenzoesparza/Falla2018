@@ -78,9 +78,9 @@
                 this.IsEnabled = true;
 
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error", 
-                    "Debes introducir tu Email", 
-                    "Aceptar");
+                    "Error",
+                    "You must enter an Email", 
+                    "Accept");
                 return;
             }
 
@@ -91,8 +91,8 @@
 
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
-                    "Debes introducir tu contraseña",
-                    "Aceptar");
+                    "You must enter a password.",
+                    "Accept");
                 this.Password = string.Empty;
                 return;
             }
@@ -111,7 +111,7 @@
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
                     connection.Message,
-                    "Aceptar");
+                    "Accept");
                 return;
             }
 
@@ -127,8 +127,8 @@
 
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
-                    "El servicioo no está listo. Reintentelo más tarde",
-                    "Aceptar");
+                    "The service is not ready. Retry later.",
+                    "Accept");
                 return;
             }
 
