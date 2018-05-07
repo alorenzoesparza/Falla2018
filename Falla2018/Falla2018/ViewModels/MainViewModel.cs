@@ -1,5 +1,7 @@
 ﻿namespace Falla2018.ViewModels
 {
+    using Models;
+
     public class MainViewModel
     {
         #region ViewModels
@@ -11,6 +13,7 @@
         #region Propiedades
         public string BaseUrl { get; set; }
         public string ApiUrl { get; set; }
+        public TokenResponse Token { get; set; }
         #endregion
 
         #region Constructores

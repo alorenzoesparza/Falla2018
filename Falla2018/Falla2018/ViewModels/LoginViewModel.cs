@@ -115,18 +115,46 @@
                 return;
             }
 
-            var Token = await this.apiService.GetToken(
+            var token = await this.apiService.GetToken(
                 "http://api.aacvalencia.es",
                 this.Email,
                 this.Password);
+
+            if (token == null)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "El servicioo no está listo. Reintentelo más tarde",
+                    "Aceptar");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(token.AccessToken))
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    token.ErrorDescription,
+                    "Aceptar");
+                this.Password = string.Empty;
+                return;
+            }
+
+            var mainViewModel = MainViewModel.GetInstance();
+
+            mainViewModel.Token = token;
+            mainViewModel.Acts = new ActsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new ActsPage());
 
             this.IsRunning = false;
             this.IsEnabled = true;
             this.Email = string.Empty;
             this.Password = string.Empty;
-
-            MainViewModel.GetInstance().Acts = new ActsViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new ActsPage());
         }
 
         public ICommand RegisterCommand { get; set; }

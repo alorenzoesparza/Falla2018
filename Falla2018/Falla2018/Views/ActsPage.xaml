@@ -12,6 +12,7 @@
             Padding="5">
             <SearchBar
                 BackgroundColor="Silver"
+                HeightRequest="46"
                 Placeholder="Buscar..."
                 SearchCommand="{Binding SearchCommand}"
                 Text="{Binding Filter, Mode=TwoWay}">
