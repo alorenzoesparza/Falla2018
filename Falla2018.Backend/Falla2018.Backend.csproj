@@ -261,15 +261,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Web - Copia.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="Web - Copia.Debug.config">
-      <DependentUpon>Web - Copia.config</DependentUpon>
-    </Content>
-    <Content Include="Web - Copia.Release.config">
-      <DependentUpon>Web - Copia.config</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -286,6 +277,12 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Falla2018.Domain\Falla2018.Domain.csproj">
+      <Project>{16f872c3-80ab-4458-b750-588370ce7ad4}</Project>
+      <Name>Falla2018.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

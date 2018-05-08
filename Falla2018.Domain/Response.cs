@@ -1,4 +1,4 @@
-﻿namespace Falla2018.Models
+﻿namespace Falla2018.Domain
 {
     public class Response
     {
