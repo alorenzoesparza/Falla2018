@@ -1,5 +1,6 @@
 ﻿namespace Falla2018.ViewModels
 {
+    using Helpers;
     using Services;
     using Models;
     using System;
@@ -62,13 +63,13 @@
             {
                 //IsRefreshing = true;
 
-                var conexion = await apiService.CheckConnection();
-                if (!conexion.IsSuccess)
+                var connection = await apiService.CheckConnection();
+                if (!connection.IsSuccess)
                 {
-                    //await dialogService.VerMensaje(
-                    //    "Error",
-                    //    conexion.Message);
-
+                    await Application.Current.MainPage.DisplayAlert(
+                        Languages.Error,
+                        connection.Message,
+                        Languages.Accept);
                     await Application.Current.MainPage.Navigation.PopAsync();
                     return;
                 }

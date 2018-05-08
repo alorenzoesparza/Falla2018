@@ -127,7 +127,7 @@
     <value>Devi inserire la tua email</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>Posta elettronica</value>
+    <value>E-mail:</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password:</value>
@@ -137,5 +137,32 @@
   </data>
   <data name="ServiceValidation" xml:space="preserve">
     <value>Il servizio non è pronto. Riprovare più tardi.!</value>
+  </data>
+  <data name="EmailPlaceHolder" xml:space="preserve">
+    <value>Immettere l'indirizzo E-mail...</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>Ricordami su questo dispositivo</value>
+  </data>
+  <data name="SomethingWrong" xml:space="preserve">
+    <value>Qualcosa è andato storto. Prova di nuovo più tardi</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Inserisci la tua password ...</value>
+  </data>
+  <data name="Forgot" xml:space="preserve">
+    <value>Hai dimenticato la password?</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Cerca...</value>
+  </data>
+  <data name="InternetSettings" xml:space="preserve">
+    <value>Verificate le impostazioni Internet.</value>
+  </data>
+  <data name="InternetConnection" xml:space="preserve">
+    <value>Connessione Internet</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Registrazione</value>
   </data>
 </root>

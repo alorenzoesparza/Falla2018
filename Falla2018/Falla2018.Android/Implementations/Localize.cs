@@ -1,4 +1,4 @@
-﻿[assembly: Xamarin.Forms.Dependency(typeof(Lands.Droid.Implementations.Localize))]
+﻿[assembly: Xamarin.Forms.Dependency(typeof(Falla2018.Droid.Implementations.Localize))]
 
 namespace Falla2018.Droid.Implementations
 {

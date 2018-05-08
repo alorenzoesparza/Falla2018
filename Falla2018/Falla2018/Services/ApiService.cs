@@ -1,5 +1,6 @@
 ﻿namespace Falla2018.Services
 {
+    using Helpers;
     using System;
     using System.Collections.Generic;
     using System.Net.Http;
@@ -19,7 +20,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Configure su acceso a internet.",
+                    Message = Languages.InternetSettings,
                 };
             }
 
@@ -30,7 +31,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = "Revise su conexión a internet.",
+                    Message = Languages.InternetConnection,
                 };
             }
 
