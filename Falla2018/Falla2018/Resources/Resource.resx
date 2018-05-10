@@ -146,4 +146,10 @@
   <data name="InternetConnection" xml:space="preserve">
     <value>Check you internet connection.</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
 </root>

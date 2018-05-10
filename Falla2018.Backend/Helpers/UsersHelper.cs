@@ -113,11 +113,11 @@
             var response = await userManager.AddPasswordAsync(userASP.Id, newPassword);
             if (response.Succeeded)
             {
-                var subject = "Lands App - Recuperación de contraseña";
+                var subject = "Falla 2018 - Recuperación de contraseña";
                 var body = string.Format(@"
-                    <h1>Lands App - Recuperación de contraseña</h1>
+                    <h1>Falla 2018 - Recuperación de contraseña</h1>
                     <p>Su nueva contraseña es: <strong>{0}</strong></p>
-                    <p>Por favor no olvide cambiarla por una de fácil recordación",
+                    <p>Por favor no olvide cambiarla por una que recuerde facilmente.",
                     newPassword);
 
                 await MailHelper.SendMail(email, subject, body);

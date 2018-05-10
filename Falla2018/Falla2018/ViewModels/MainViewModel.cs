@@ -21,8 +21,8 @@
         {
             instance = this;
 
-            BaseUrl = "http://antoniole.com/";
-            ApiUrl = "/FallaMovilApi";
+            BaseUrl = "http://api.aacvalencia.es";
+            ApiUrl = "/api";
             this.Login = new LoginViewModel();
         }
         #endregion

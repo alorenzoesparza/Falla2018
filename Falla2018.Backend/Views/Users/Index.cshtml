@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Falla2018.Domain.User>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Usuarios";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crear Nuevo", "Create")
 </p>
 <table class="table">
     <tr>
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.ImagePath)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+            @Html.ActionLink("Editar", "Edit", new { id=item.UserId }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.UserId }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.UserId })
         </td>
     </tr>
 }

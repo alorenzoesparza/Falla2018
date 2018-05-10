@@ -165,4 +165,10 @@
   <data name="Register" xml:space="preserve">
     <value>Registrazione</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>Accesso</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
 </root>

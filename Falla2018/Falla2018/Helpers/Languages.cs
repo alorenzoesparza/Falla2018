@@ -93,5 +93,15 @@
         {
             get { return Resource.InternetConnection; }
         }
+
+        public static string Login
+        {
+            get { return Resource.Login; }
+        }
+
+        public static string Menu
+        {
+            get { return Resource.Menu; }
+        }
     }
 }
