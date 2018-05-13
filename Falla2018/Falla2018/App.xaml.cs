@@ -6,7 +6,7 @@
     public partial class App : Application
     {
         #region Propiedades
-        public static NavigationPage Navigator { get; internal set; }
+        //public static NavigationPage Navigator { get; internal set; }
         #endregion
 
         #region Constructores
@@ -14,6 +14,7 @@
         {
             InitializeComponent();
 
+            //MainPage = new MasterPage();
             MainPage = new NavigationPage(new LoginPage());
         }
         #endregion
