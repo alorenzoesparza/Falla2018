@@ -70,20 +70,11 @@ namespace Falla2018.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Email:.
+        ///   Busca una cadena traducida similar a Email.
         /// </summary>
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Enter your email....
-        /// </summary>
-        public static string EmailPlaceHolder {
-            get {
-                return ResourceManager.GetString("EmailPlaceHolder", resourceCulture);
             }
         }
         
@@ -106,6 +97,7 @@ namespace Falla2018.Resources {
         }
         
         /// <summary>
+<<<<<<< HEAD
         ///   Busca una cadena traducida similar a Forgot your password?.
         /// </summary>
         public static string Forgot {
@@ -151,20 +143,13 @@ namespace Falla2018.Resources {
         }
         
         /// <summary>
+=======
+>>>>>>> parent of 6ddb0c4... Traducción Varios Idiomas
         ///   Busca una cadena traducida similar a Password.
         /// </summary>
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Enter your password....
-        /// </summary>
-        public static string PasswordPlaceHolder {
-            get {
-                return ResourceManager.GetString("PasswordPlaceHolder", resourceCulture);
             }
         }
         
@@ -178,47 +163,11 @@ namespace Falla2018.Resources {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Register.
-        /// </summary>
-        public static string Register {
-            get {
-                return ResourceManager.GetString("Register", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Rememberme in this device.
-        /// </summary>
-        public static string Rememberme {
-            get {
-                return ResourceManager.GetString("Rememberme", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Search....
-        /// </summary>
-        public static string Search {
-            get {
-                return ResourceManager.GetString("Search", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a The service is not ready. Retry later..
         /// </summary>
         public static string ServiceValidation {
             get {
                 return ResourceManager.GetString("ServiceValidation", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Something was wrong, please try later..
-        /// </summary>
-        public static string SomethingWrong {
-            get {
-                return ResourceManager.GetString("SomethingWrong", resourceCulture);
             }
         }
     }

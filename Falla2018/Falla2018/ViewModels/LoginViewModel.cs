@@ -1,7 +1,6 @@
 ﻿namespace Falla2018.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
-    using Helpers;
     using System.Windows.Input;
     using Services;
     using Views;
@@ -79,9 +78,9 @@
                 this.IsEnabled = true;
 
                 await Application.Current.MainPage.DisplayAlert(
-                    Languages.Error,
-                    Languages.EmailValidation,
-                    Languages.Accept);
+                    "Error",
+                    "You must enter an Email", 
+                    "Accept");
                 return;
             }
 
@@ -91,9 +90,9 @@
                 this.IsEnabled = true;
 
                 await Application.Current.MainPage.DisplayAlert(
-                    Languages.Error,
-                    Languages.PasswordValidation,
-                    Languages.Accept);
+                    "Error",
+                    "You must enter a password.",
+                    "Accept");
                 this.Password = string.Empty;
                 return;
             }
@@ -110,9 +109,9 @@
                 this.IsEnabled = true;
 
                 await Application.Current.MainPage.DisplayAlert(
-                    Languages.Error,
+                    "Error",
                     connection.Message,
-                    Languages.Accept);
+                    "Accept");
                 return;
             }
 
@@ -127,9 +126,9 @@
                 this.IsEnabled = true;
 
                 await Application.Current.MainPage.DisplayAlert(
-                    Languages.Error,
-                    Languages.ServiceValidation,
-                    Languages.Accept);
+                    "Error",
+                    "The service is not ready. Retry later.",
+                    "Accept");
                 return;
             }
 
@@ -139,9 +138,9 @@
                 this.IsEnabled = true;
 
                 await Application.Current.MainPage.DisplayAlert(
-                    Languages.Error,
+                    "Error",
                     token.ErrorDescription,
-                    Languages.Accept);
+                    "Aceptar");
                 this.Password = string.Empty;
                 return;
             }

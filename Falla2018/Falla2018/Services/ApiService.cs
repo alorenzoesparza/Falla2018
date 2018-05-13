@@ -1,10 +1,13 @@
 ﻿namespace Falla2018.Services
 {
+<<<<<<< HEAD
     using Domain;
     using Helpers;
     using Models;
     using Newtonsoft.Json;
     using Plugin.Connectivity;
+=======
+>>>>>>> parent of 6ddb0c4... Traducción Varios Idiomas
     using System;
     using System.Collections.Generic;
     using System.Net.Http;
@@ -21,7 +24,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = Languages.InternetSettings,
+                    Message = "Configure su acceso a internet.",
                 };
             }
 
@@ -32,7 +35,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message = Languages.InternetConnection,
+                    Message = "Revise su conexión a internet.",
                 };
             }
 

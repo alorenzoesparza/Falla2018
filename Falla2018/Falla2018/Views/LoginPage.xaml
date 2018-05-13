@@ -2,7 +2,6 @@
 <ContentPage 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:i18n="clr-namespace:Falla2018.Helpers"
     x:Class="Falla2018.Views.LoginPage"
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
     Title="{i18n:Translate Login}">
@@ -25,35 +24,35 @@
                     Margin="10,0"
                     VerticalOptions="CenterAndExpand">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1.2*" />
+                        <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="2.5*"/>
                     </Grid.ColumnDefinitions>
                     <Label
                         Grid.Column="0"
                         Grid.Row="0"
                         FontAttributes="Bold"
-                        Text="{i18n:Translate Email}"
+                        Text="E-mail"
                         VerticalOptions="Center">
                     </Label>
                     <Entry
                         Grid.Column="1"
                         Grid.Row="0"
                         Keyboard="Email"
-                        Placeholder="{i18n:Translate EmailPlaceHolder}"
+                        Placeholder="Introduce tu email"
                         Text="{Binding Email, Mode=TwoWay}">
                     </Entry>
                     <Label
                         Grid.Column="0"
                         Grid.Row="1"
                         FontAttributes="Bold"
-                        Text="{i18n:Translate Password}"
+                        Text="Password"
                         VerticalOptions="Center">
                     </Label>
                     <Entry
                         Grid.Column="1"
                         Grid.Row="1"
                         IsPassword="True"
-                        Placeholder="{i18n:Translate PasswordPlaceHolder}"
+                        Placeholder="Introduce tu password"
                         Text="{Binding Password, Mode=TwoWay}">
                     </Entry>
                 </Grid>
@@ -67,7 +66,7 @@
                     VerticalOptions="CenterAndExpand">
                     <Label
                         HorizontalOptions="StartAndExpand"
-                        Text="{i18n:Translate Rememberme}"
+                        Text="Recuerdame en este dispotivo"
                         VerticalOptions="Center">
                     </Label>
                     <Switch
@@ -77,7 +76,7 @@
                 </StackLayout>
                 <Label
                     HorizontalOptions="Center"
-                    Text="{i18n:Translate Forgot}"
+                    Text="¿Olvidaste tú contraseña?"
                     TextColor="Blue"
                     VerticalOptions="Center">
                 </Label>
@@ -102,7 +101,7 @@
                         HeightRequest="46"
                         HorizontalOptions="FillAndExpand"
                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                        Text="{i18n:Translate Register}"
+                        Text="Registrarse"
                         TextColor="White">
                     </Button>
                 </StackLayout>

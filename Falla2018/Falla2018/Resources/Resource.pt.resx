@@ -127,7 +127,7 @@
     <value>Você precisa inserir o seu endereço de email.</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>E-mail:</value>
+    <value>Email</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Senha:</value>
@@ -138,6 +138,7 @@
   <data name="ServiceValidation" xml:space="preserve">
     <value>O serviço não está disponível, tente novamente mais tarde</value>
   </data>
+<<<<<<< HEAD
   <data name="EmailPlaceHolder" xml:space="preserve">
     <value>Insira seu E-mail...</value>
   </data>
@@ -171,4 +172,6 @@
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
   </data>
+=======
+>>>>>>> parent of 6ddb0c4... Traducción Varios Idiomas
 </root>

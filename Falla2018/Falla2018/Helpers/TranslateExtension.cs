@@ -12,7 +12,7 @@
     public class TranslateExtension : IMarkupExtension
     {
         readonly CultureInfo ci;
-        const string ResourceId = "Falla2018.Resources.Resource";
+        const string ResourceId = "Lands.Resources.Resource";
 
         static readonly Lazy<ResourceManager> ResMgr =
             new Lazy<ResourceManager>(() => new ResourceManager(

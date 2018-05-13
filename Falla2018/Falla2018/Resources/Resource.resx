@@ -108,7 +108,7 @@
     <value>You must enter an Email.</value>
   </data>
   <data name="Email" xml:space="preserve">
-    <value>Email:</value>
+    <value>Email</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
@@ -119,6 +119,7 @@
   <data name="ServiceValidation" xml:space="preserve">
     <value>The service is not ready. Retry later.</value>
   </data>
+<<<<<<< HEAD
   <data name="EmailPlaceHolder" xml:space="preserve">
     <value>Enter your email...</value>
   </data>
@@ -152,4 +153,6 @@
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
   </data>
+=======
+>>>>>>> parent of 6ddb0c4... Traducción Varios Idiomas
 </root>

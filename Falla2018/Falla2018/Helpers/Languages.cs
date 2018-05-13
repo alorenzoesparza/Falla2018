@@ -12,6 +12,7 @@
             Resource.Culture = ci;
             DependencyService.Get<ILocalize>().SetLocale(ci);
         }
+<<<<<<< HEAD
 
         public static string Accept
         {
@@ -103,5 +104,6 @@
         {
             get { return Resource.Menu; }
         }
+=======
+>>>>>>> parent of 6ddb0c4... Traducción Varios Idiomas
     }
-}
